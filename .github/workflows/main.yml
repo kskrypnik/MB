@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+    - main
+    
+  pull_request:
+    branches:
+    - main
+    
+  schedule:
+   - cron: "0 2 * * 1-5"
+
+jobs:
+  my_job:
+    name: run build
+    runs-on: macos-latest
+
+
+  name: Install Dependencies
+    run: npm install
