@@ -12,11 +12,11 @@ This test suite is designed to validate the negative path of enquiring about the
 
     Clone the repository:
 
-    git clone <repository-url>
+    git clone https://github.com/kskrypnik/MB.git
 
 <h2>Navigate to the project folder:</h2>
 
-    cd <MB>
+    cd MB
 
 <h2>Install dependencies:</h2>
 
