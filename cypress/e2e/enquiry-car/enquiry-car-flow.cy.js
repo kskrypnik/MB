@@ -31,6 +31,7 @@ describe('Validate the negative path of enquiring the highest price at Mercedes-
 
     // Enter zip code
     cy.get('wb-input-control').type('2007');
+    cy.get('body').click(0,0);
     cy.wait(5000);
 
     // Confirm visibility of input
@@ -55,8 +56,11 @@ describe('Validate the negative path of enquiring the highest price at Mercedes-
     // Fill in contact form
     cy.get('[data-test-id="rfq-contact__first-name"]').type('Hello MB team');
     cy.get('[data-test-id="rfq-contact__last-name"]').type('Merry Christmas to you');
-    cy.get('[data-test-id="rfq-contact__email"]').type('fake@email.com');
+    cy.get('[data-test-id="rfq-contact__email"]').type('fakemail');
     cy.get('[data-test-id="rfq-contact__phone"]').type('0441234567');
+    cy.get('[data-test-id="rfq-contact__email"]').scrollIntoView()
+    cy.get('[data-test-id="rfq-contact__email"]').contains('Please enter a valid email address using a minimum of six characters.')
+    cy.get('[data-test-id="rfq-contact__email"]').type('fake@email.com');
     cy.get('[data-test-id="rfq-contact__postal-code"]').type('2007');
     cy.get('[data-test-id="rfq-contact__comments"]').type('That was a fun challenge');
 
@@ -73,7 +77,7 @@ describe('Validate the negative path of enquiring the highest price at Mercedes-
 
      //Submit form
      cy.get('[data-test-id="dcp-rfq-contact-button-container__button-next"]').click()
-
+  
      //Verify form was submitted successfully
      cy.get('.dcp-rfq-container-modal-content')
      .should('contain', 'Your request has been successfully submitted.')
