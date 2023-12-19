@@ -41,4 +41,3 @@ Opens the Mercedes-Benz demo website Chooses the country and enters a zip code S
 <h2>Notes</h2>
 
 The tests use Cypress commands and assertions to validate the functionality of the Mercedes-Benz website.
-
